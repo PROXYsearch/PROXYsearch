@@ -1,4 +1,0 @@
-PROXYsearch
-===========
-
-the software
