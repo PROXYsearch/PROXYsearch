@@ -1,0 +1,1015 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		
+		<!-- ############################################################################################# -->
+		<!-- Twitter Bootstrap and base CSS files-->
+		<!-- ############################################################################################# -->
+		<link rel="stylesheet" href="public/stylesheets/bootstrap.css">
+
+		<!-- Google Fonts -->
+		<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lato:400,700,700italic' />
+
+		<!-- Icon set for Bootstrap: http://fortawesome.github.io/Font-Awesome/ -->
+		<link rel="stylesheet" href="public/Font-Awesome-3.2.1/css/font-awesome.min.css">
+		<link rel="stylesheet" href="public/Font-Awesome-3.2.1/css/font-awesome-ie7.min.css">
+
+		<link rel="stylesheet" type="text/css" href="public/stylesheets/jquery-ui.css" media="all"/>
+
+
+		<!-- ############################################################################################# -->
+		<!-- jQuery, bootstrap, rails-ujs and other base Javascripts -->
+		<!-- ############################################################################################# -->
+		<script type="text/javascript" src="public/javascripts/jquery.js"></script>
+		<script type="text/javascript" src="public/javascripts/jquery-ui.js"></script>
+		<script type="text/javascript" src="public/javascripts/bootstrap.js"></script>
+
+		<script type="text/javascript" src="public/javascripts/application.js"></script>
+	</head>
+
+	<body>
+
+		<div class="row-fluid">
+			<div class="span12">
+				<h3>PROXYsearch: Mashes the segmented form results of <a target="_blank" href="http://www.judicial.state.sc.us/opinions/searchOpinion.cfm">http://www.judicial.state.sc.us/opinions/searchOpinion.cfm</a></h3>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<div class="span6">
+				<form method=post data-trigger="form_mash" class="form-horizontal">
+
+					<div data-form-mash="http://www.judicial.state.sc.us/opinions/searchTypeRange.cfm">
+						<div class="control-group">
+							<label class="control-label">Court Type</label>
+							<div class="controls">
+								<select name="courtType">
+									<option value="B">Supreme and Appeals</option>
+									<option value="S">Supreme only</option>
+									<option value="A">Appeals only</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Begin Date</label>
+							<div class="controls">
+								<input type="text" data-datepicker=true name="begindate" placeholder="start date"/>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">End Date</label>
+							<div class="controls">
+								<input type="text" data-datepicker=true name="enddate" placeholder="end date"/>
+							</div>
+						</div>
+					</div>
+
+					<div data-form-mash="http://www.judicial.state.sc.us/opinions/CFsearchSOLR/allPubOpinionsSearchResults.cfm">
+						<div class="control-group">
+							<label class="control-label">Text Seach</label>
+							<div class="controls">
+								<input type="text" name="opinionSearchCriteria" placeholder="Enter text"/>
+							</div>
+						</div>
+					</div>
+
+					<div data-form-mash="http://www.judicial.state.sc.us/opinions/searchCaseNo.cfm">
+						<div class="control-group">
+							<label class="control-label">Case Number</label>
+							<div class="controls">
+								<input type="number" name="caseNo" placeholder="0000" />
+							</div>
+						</div>
+					</div>
+
+					<div data-form-mash="http://www.judicial.state.sc.us/opinions/searchAuthor.cfm">
+						<div class="control-group">
+							<label class="control-label">Author</label>
+							<div class="controls">
+								<select name="authorID">
+									<option value="0">Pick an Author</option>
+									<option value="1120">Anderson, Ralph King (Court of Appeals)</option>
+									<option value="1128">Beatty, Donald W. (Court of Appeals)</option>
+
+									<option value="1134">Beatty, Donald W. (Supreme Court)</option>
+
+									<option value="1119">Burnett, E. C. (Supreme Court)</option>
+
+									<option value="1114">Connor, Carol  (Court of Appeals)</option>
+
+									<option value="1115">Cureton, Jasper M. (Court of Appeals)</option>
+
+									<option value="1141">Few, John C. (Court of Appeals)</option>
+
+									<option value="1110">Finney, Ernest A. (Supreme Court)</option>
+
+									<option value="1137">Geathers, John D. (Court of Appeals)</option>
+
+									<option value="1116">Goolsby, C. Tolbert (Court of Appeals)</option>
+
+									<option value="1111">Hearn, Kaye G. (Court of Appeals)</option>
+
+									<option value="1139">Hearn, Kaye G. (Supreme Court)</option>
+
+									<option value="1123">Howard, William L. (Court of Appeals)</option>
+
+									<option value="1112">Howell, William T. (Court of Appeals)</option>
+
+									<option value="1121">Huff, Thomas E. (Court of Appeals)</option>
+
+									<option value="1129">Kittredge, John W. (Court of Appeals)</option>
+
+									<option value="1136">Kittredge, John W. (Supreme Court)</option>
+
+									<option value="1135">Konduros, Aphrodite K.  (Court of Appeals)</option>
+
+									<option value="1138">Lockemy, James E. (Court of Appeals)</option>
+
+									<option value="1107">Moore, James E. (Supreme Court)</option>
+
+									<option value="1124">Morehead, A. E. ''Gene'' (Court of Appeals)</option>
+
+									<option value="1000">Per Curiam,  (Supreme Court)</option>
+
+									<option value="1133">Pieper, Daniel F. (Court of Appeals)</option>
+
+									<option value="1127">Pleicones, Costa M. (Supreme Court)</option>
+
+									<option value="1130">Short, Paul E. (Court of Appeals)</option>
+
+									<option value="1126">Shuler, M. Duane (Court of Appeals)</option>
+
+									<option value="1122">Stilwell, H. Samuel (Court of Appeals)</option>
+
+									<option value="1132">Thomas, Paula H. (Court of Appeals)</option>
+
+									<option value="1118">Toal, Jean Hoefer (Supreme Court)</option>
+
+									<option value="1108">Waller, John H. (Supreme Court)</option>
+
+									<option value="1131">Williams, H. Bruce (Court of Appeals)</option>
+
+									<option value="2084">Anderson, Ralph King (Acting Justice)</option>
+
+									<option value="2096">Burnett, E. C. (Acting Justice)</option>
+
+									<option value="2053">Cole, J. Derham (Acting Justice)</option>
+
+									<option value="2041">Cottingham, Edward B. (Acting Justice)</option>
+
+									<option value="2135">Couch, Roger L. (Acting Justice)</option>
+
+									<option value="2060">Dennis, R. Markley (Acting Justice)</option>
+
+									<option value="2056">Floyd, Henry F. (Acting Justice)</option>
+
+									<option value="2132">Hayes, J. Mark (Acting Justice)</option>
+
+									<option value="2138">Hill, D. Garrison (Acting Justice)</option>
+
+									<option value="2017">Kinard, J. Ernest (Acting Justice)</option>
+
+									<option value="2107">King, Howard P. (Acting Justice)</option>
+
+									<option value="2104">Kittredge, John W. (Acting Justice)</option>
+
+									<option value="2063">Macaulay, Alexander S. (Acting Justice)</option>
+
+									<option value="2061">Manning, L. Casey (Acting Justice)</option>
+
+									<option value="2043">McKellar, L. Henry (Acting Justice)</option>
+
+									<option value="2078">Moore, James E. (Acting Justice)</option>
+
+									<option value="2117">Nicholson, J. C.  (Acting Justice)</option>
+
+									<option value="2114">Williams, James C. (Acting Justice)</option>
+
+								</select>
+								<br/><span class="help-text">Hard-coded for now</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label">&nbsp;</label>
+						<div class="controls">
+							<hr/>
+							<div>Choose a judge type for the drop-down box below</div>
+							<label class="radio inline">
+								<input type="radio" name="judge_type" value="circuit" data-trigger="radio-toggle" checked>
+								Circuit Judges
+							</label>
+							<label class="radio inline">
+								<input type="radio" name="judge_type" data-trigger="radio-toggle" value="family">
+								Family Judges
+							</label>
+							<label class="radio inline">
+								<input type="radio" name="judge_type" data-trigger="radio-toggle" value="master">
+								Master Equity Judges
+							</label>
+						</div>
+					</div>
+
+					<div data-form-mash="http://www.judicial.state.sc.us/opinions/searchCircuitJudge.cfm" data-radio-toggle="circuit">
+						<div class="control-group">
+							<label class="control-label">Circuit Judge</label>
+							<div class="controls">
+								<select name="circuitJudge">
+									<option value="0">Pick a Judge</option>
+									<option value="2159">Addy, Frank R.</option>
+			 
+									<option value="2113">Alford, Lee S.</option>
+
+									<option value="2110">Barber, James R.</option>
+
+									<option value="2161">Benjamin, DeAndrea G.</option>
+
+									<option value="2160">Brown, D. Craig </option>
+
+									<option value="2122">Buckner, Perry M.</option>
+
+									<option value="2048">Burch, Paul M.</option>
+
+									<option value="2053">Cole, J. Derham</option>
+
+									<option value="2144">Cothran, R. Ferrell</option>
+
+									<option value="2135">Couch, Roger L.</option>
+
+									<option value="2148">Culbertson, Benjamin H.</option>
+
+									<option value="2060">Dennis, R. Markley</option>
+
+									<option value="2153">Dickson, Edgar W.</option>
+
+									<option value="2136">Early, Doyet A.</option>
+
+									<option value="2168">Gibbons, Brian M.</option>
+
+									<option value="2112">Goodstein, Diane Schafer</option>
+
+									<option value="2154">Griffith, Eugene C.</option>
+
+									<option value="2151">Harrington, Kristi Lea</option>
+
+									<option value="2132">Hayes, J. Mark</option>
+
+									<option value="2049">Hayes, John C.</option>
+
+									<option value="2138">Hill, D. Garrison</option>
+
+									<option value="2167">Hocker, Donald B.</option>
+
+									<option value="2164">Hood, Robert E.</option>
+
+									<option value="2152">Hyman, Larry B.</option>
+
+									<option value="2143">James, George C.</option>
+
+									<option value="2128">Jefferson, Deadra L.</option>
+
+									<option value="2129">John, Steven H. </option>
+
+									<option value="2050">Keesley, William P.</option>
+
+									<option value="2165">Kelly, R. Keith</option>
+
+									<option value="2118">Lee, Alison Renee</option>
+
+									<option value="2063">Macaulay, Alexander S.</option>
+
+									<option value="2131">Maddox, J. Cordell</option>
+
+									<option value="2061">Manning, L. Casey</option>
+
+									<option value="2155">McIntosh, R. Lawton</option>
+
+									<option value="2145">McMahon, R. Knox</option>
+
+									<option value="2130">Miller, Edward W.</option>
+
+									<option value="2142">Mullen, Carmen T.</option>
+
+									<option value="2166">Murphy, Maité </option>
+
+									<option value="2140">Nettles, Michael G.</option>
+
+									<option value="2127">Newman, Clifton </option>
+
+									<option value="2141">Russo, Thomas A.</option>
+
+									<option value="2157">Seals, William H.</option>
+
+									<option value="2158">Stilwell, Robin B.</option>
+
+									<option value="2162">Verdin, Letitia H.</option>
+
+									<option value="2137">Welmaker, G. Edward</option>
+
+									<option value="2134">Young, Roger M.</option>
+
+									<option value="2156">Young, W. Jeffrey</option>
+
+									<option value="2084">Anderson, Ralph King</option>
+
+									<option value="2029">Baggett, Julius H.</option>
+
+									<option value="2027">Ballenger, William Howard</option>
+
+									<option value="2121">Baxley, J. Michael</option>
+
+									<option value="2103">Beatty, Donald W.</option>
+
+									<option value="2106">Breeden, John L.</option>
+
+									<option value="2076">Bristow, Walter J.</option>
+
+									<option value="2105">Brogdon, James E.</option>
+
+									<option value="2090">Brown, Luke N.</option>
+
+									<option value="2096">Burnett, E. C.</option>
+
+									<option value="2020">Chandler, A. Lee</option>
+
+									<option value="2146">Childs, J. Michelle</option>
+
+									<option value="2058">Clary, Gary E.</option>
+
+									<option value="2071">Cobb, Owens T.</option>
+
+									<option value="2019">Coleman, George F.</option>
+
+									<option value="2024">Connor, Carol </option>
+
+									<option value="2022">Cox, Walter T.</option>
+
+									<option value="2150">Cureton, Jasper M.</option>
+
+									<option value="2018">Eltzroth, Clyde A.</option>
+
+									<option value="2002">Eppes, Frank </option>
+
+									<option value="2003">Ervin, Thomas J.</option>
+
+									<option value="2032">Ferguson, James C. "Tee"</option>
+
+									<option value="2123">Few, John C.</option>
+
+									<option value="2091">Fields, Richard E.</option>
+
+									<option value="2028">Finney, Ernest A.</option>
+
+									<option value="2056">Floyd, Henry F.</option>
+
+									<option value="2073">Floyd, Sidney T.</option>
+
+									<option value="2059">Gardner, John P.</option>
+
+									<option value="2038">Gentry, John </option>
+
+									<option value="2120">Goode, Kenneth G.</option>
+
+									<option value="2149">Goolsby, C. Tolbert</option>
+
+									<option value="2042">Gregory, Jackson V.</option>
+
+									<option value="2004">Grimball, John </option>
+
+									<option value="2037">Hall, H. Dean</option>
+
+									<option value="2083">Hare, William R.</option>
+
+									<option value="2081">Harris, C. Anthony</option>
+
+									<option value="2102">Harwell, B. Hicks</option>
+
+									<option value="2005">Harwell, David Walker</option>
+
+									<option value="2006">Hayes, Robert W.</option>
+
+									<option value="2026">Howard, William L.</option>
+
+									<option value="2085">Howell, William T.</option>
+
+									<option value="2055">Johnson, James W.</option>
+
+									<option value="2086">Kinon, Marion H</option>
+
+									<option value="2104">Kittredge, John W.</option>
+
+									<option value="2007">Laney, Dan F.</option>
+
+									<option value="2133">Lloyd, Reginald I.</option>
+
+									<option value="2031">Lockemy, James E.</option>
+
+									<option value="2039">Long, Hubert E.</option>
+
+									<option value="2036">Maring, David H.</option>
+
+									<option value="2057">Martin, Daniel E.</option>
+
+									<option value="2163">McDonald, Stephanie P.</option>
+
+									<option value="2023">Mceachin, Dan M.</option>
+
+									<option value="2093">McFadden, Robert L.</option>
+
+									<option value="2094">McGowan, Frank P.</option>
+
+									<option value="2025">McInnis, David Fairley</option>
+
+									<option value="2043">McKellar, L. Henry</option>
+
+									<option value="2095">McKown, Jonathan Z.</option>
+
+									<option value="2119">Milling, John M. </option>
+
+									<option value="2078">Moore, James E.</option>
+
+									<option value="2030">Moore, Paul M.</option>
+
+									<option value="2087">Morris, James M.</option>
+
+									<option value="2021">Moss, Joseph R.</option>
+
+									<option value="2009">Nicholson, Francis B.</option>
+
+									<option value="2035">Patterson, Larry R.</option>
+
+									<option value="2010">Peeples, Rodney A.</option>
+
+									<option value="2108">Pieper, Daniel F.</option>
+
+									<option value="2045">Pleicones, Costa M.</option>
+
+									<option value="2046">Price, James </option>
+
+									<option value="2044">Rawl, A. Victor</option>
+
+									<option value="2072">Richter, Lawrence E.</option>
+
+									<option value="2074">Robinson, Klyde </option>
+
+									<option value="2012">Rosen, Louis </option>
+
+									<option value="2040">Rushing, Don S.</option>
+
+									<option value="2115">Saunders, Wyatt T.</option>
+
+									<option value="2047">Short, Paul E.</option>
+
+									<option value="2033">Shuler, M. Duane</option>
+
+									<option value="2013">Singletary, Clarence E.</option>
+
+									<option value="2089">Smith, John Hamilton</option>
+
+									<option value="2051">Smoak, Gerald C.</option>
+
+									<option value="2014">Spruill, James A.</option>
+
+									<option value="2088">Stephen, James Barnett</option>
+
+									<option value="2109">Thomas, Paula H.</option>
+
+									<option value="2015">Timmerman, George B.</option>
+
+									<option value="2011">Traxler, William Byrd</option>
+
+									<option value="2092">Waller, John Henry</option>
+
+									<option value="2111">Watson, Joseph J.</option>
+
+									<option value="2016">Weatherford, Wade S.</option>
+
+									<option value="2062">Westbrook, Marc H.</option>
+
+									<option value="2052">Whetstone, Charles W.</option>
+
+									<option value="2114">Williams, James C.</option>
+
+									<option value="2034">Wilson, Joseph A.</option>
+
+									<option value="2126">Cooper, G. Thomas</option>
+
+									<option value="2054">Cooper, Thomas W.</option>
+
+									<option value="2041">Cottingham, Edward B.</option>
+
+									<option value="2139">Goldsmith, Brooks P.</option>
+
+									<option value="2008">Hughston, Thomas L.</option>
+
+									<option value="2017">Kinard, J. Ernest</option>
+
+									<option value="2107">King, Howard P.</option>
+
+									<option value="2117">Nicholson, J. C. </option>
+
+									<option value="2070">Pyle, C. Victor</option>
+								</select>
+								<br/><span class="help-text">hard-coded, too</span>
+							</div>
+						</div>
+					</div>
+
+					<div style="display:none" data-form-mash="http://www.judicial.state.sc.us/opinions/searchFamilyJudge.cfm" data-radio-toggle="family">
+						<div class="control-group">
+							<label class="control-label">Family Judge</label>
+							<div class="controls">
+								<select name="familyJudge">
+									<option value="0">Pick a Judge</option>
+									<option value="4165">Ballenger, Karen F.</option>
+			 
+									<option value="4158">Bridges, Usha J. </option>
+
+									<option value="4144">Bromell Holmes, Jan B.</option>
+
+									<option value="4134">Cate, Jocelyn B.</option>
+
+									<option value="4141">Conits, Rochelle Y.</option>
+
+									<option value="4076">Creech, Wayne M.</option>
+
+									<option value="4179">Dunbar, Tarita A.</option>
+
+									<option value="4080">Edwards, Tommy B.</option>
+
+									<option value="4175">Emery, Melissa Johnson</option>
+
+									<option value="4120">Fraley, James F.</option>
+
+									<option value="4148">Fuge, Peter L.</option>
+
+									<option value="4130">Gable, Dale Moore</option>
+
+									<option value="4103">Garfinkel, Paul W.</option>
+
+									<option value="4160">Guyton, David G.</option>
+
+									<option value="4104">Henderson, Roger E.</option>
+
+									<option value="4154">Holt, Michael S.</option>
+
+									<option value="4167">Hurley, Michelle M.</option>
+
+									<option value="4142">Jenkinson, Gordon B.</option>
+
+									<option value="4109">Johnson, Alvin D.</option>
+
+									<option value="4132">Jones, Anne Gue</option>
+
+									<option value="4138">Jones, Dorothy Mobley</option>
+
+									<option value="4155">Jones, Gwendlyne Y.</option>
+
+									<option value="4170">Jones, Tony M.</option>
+
+									<option value="4177">Khoury, Coreen B. </option>
+
+									<option value="4151">Kinlaw, Alex </option>
+
+									<option value="4118">Landis, Jack A.</option>
+
+									<option value="4152">Long, Edgar H.</option>
+
+									<option value="4162">Malphrus, Deborah A.</option>
+
+									<option value="4161">Martin, Daniel E.</option>
+
+									<option value="4133">McFaddin, George M.</option>
+
+									<option value="4171">McGee, James G.</option>
+
+									<option value="4173">McGee, Randall E.</option>
+
+									<option value="4124">McGowan, Joseph W.</option>
+
+									<option value="4164">McIntyre, Salley Huggins</option>
+
+									<option value="4115">McLin, Nancy C.</option>
+
+									<option value="4060">McMahon, Judy L.</option>
+
+									<option value="4072">Morehead, A. E.</option>
+
+									<option value="4145">Morris, Dana A.</option>
+
+									<option value="4143">Neese, Deborah </option>
+
+									<option value="4166">Newton, Robert E.</option>
+
+									<option value="4149">Norton, Ronald R.</option>
+
+									<option value="4174">Phillips, David E.</option>
+
+									<option value="4163">Phillips, Harry L. (Don)</option>
+
+									<option value="4172">Pincus, Monét S.</option>
+
+									<option value="4147">Pogue, Timothy H.</option>
+
+									<option value="4169">Pope-Black, Kelly </option>
+
+									<option value="4159">Robertson, W. Marsh</option>
+
+									<option value="4073">Rucker, John M.</option>
+
+									<option value="4178">Seigler, W. Greg</option>
+
+									<option value="4157">Sinclair, Phillip K.</option>
+
+									<option value="4168">Smithdeal, Joseph C.</option>
+
+									<option value="4106">Smoak, Gerald C.</option>
+
+									<option value="4156">Snelgrove, Vicki J.</option>
+
+									<option value="4146">Sprott, W. Thomas</option>
+
+									<option value="4153">Taylor, Angela R.</option>
+
+									<option value="4137">Vinson, Jerry D.</option>
+
+									<option value="4176">White, Thomas Henry</option>
+
+									<option value="4116">Wylie, William J.</option>
+
+									<option value="4110">Abbott, Haskell T.</option>
+
+									<option value="4088">Alford, Lee S.</option>
+
+									<option value="4121">Allen, Kellum W.</option>
+
+									<option value="4055">Arrants, James Clator</option>
+
+									<option value="4001">Baroody, David S.</option>
+
+									<option value="4051">Barrineau, Thomas B.</option>
+
+									<option value="4113">Bartlett, Stephen S.</option>
+
+									<option value="4002">Bell, Roddey L.</option>
+
+									<option value="4003">Belser, Septimus H.</option>
+
+									<option value="4004">Biggs, Alvin C.</option>
+
+									<option value="4005">Black, John T.</option>
+
+									<option value="4006">Board, Joseph W.</option>
+
+									<option value="4084">Bonnoitt, H. E.</option>
+
+									<option value="4007">Boulware, Harold R.</option>
+
+									<option value="4122">Brown, Timothy L.</option>
+
+									<option value="4093">Brown, Walter B.</option>
+
+									<option value="4117">Brown, Wesley L.</option>
+
+									<option value="4087">Buchan, Mary E.</option>
+
+									<option value="4047">Burnett, E. C.</option>
+
+									<option value="4008">Burnside, Robert H.</option>
+
+									<option value="4078">Byars, William R.</option>
+
+									<option value="4009">Cahaly, F. B.</option>
+
+									<option value="4128">Cain, Timothy M.</option>
+
+									<option value="4010">Caldwell, Wylie H.</option>
+
+									<option value="4030">Caldwell, Wylie H.</option>
+
+									<option value="4064">Campbell, William M.</option>
+
+									<option value="4013">Charles, William K.</option>
+
+									<option value="4094">Chewning, Richard W.</option>
+
+									<option value="4048">Cobb, Owens T.</option>
+
+									<option value="4070">Connor, Carol </option>
+
+									<option value="4011">Craine, William J.</option>
+
+									<option value="4061">Cureton, Jasper M.</option>
+
+									<option value="4012">Cureton, Robert H.</option>
+
+									<option value="4069">Fanning, Donald A.</option>
+
+									<option value="4014">Fields, Richard E.</option>
+
+									<option value="4101">Flynn, John S.</option>
+
+									<option value="4065">Foster, Thomas E.</option>
+
+									<option value="4015">Gasque, Samuel Norwood</option>
+
+									<option value="4139">Gibbons, Brian M.</option>
+
+									<option value="4131">Goldsmith, Brooks P.</option>
+
+									<option value="4089">Gray, Ruben L.</option>
+
+									<option value="4071">Greer, Benny R.</option>
+
+									<option value="4016">Griffith, Jeff D.</option>
+
+									<option value="4067">Hall , H. Dean</option>
+
+									<option value="4017">Hall, Stuart H.</option>
+
+									<option value="4083">Hare, William R.</option>
+
+									<option value="4019">Harte, John W.</option>
+
+									<option value="4075">Hearn, Kaye G.</option>
+
+									<option value="4052">Hoffman, R. </option>
+
+									<option value="4066">Inabinet, G. Larry</option>
+
+									<option value="4126">Jacobs, Rolly W.</option>
+
+									<option value="4111">Jefferson, Deadra L.</option>
+
+									<option value="4112">Jenkins, Robert N.</option>
+
+									<option value="4058">Johnson, R. Kinard</option>
+
+									<option value="4053">Jolly, Warren H.</option>
+
+									<option value="4020">Kemp, R. W.</option>
+
+									<option value="4081">Kittredge, John W.</option>
+
+									<option value="4021">Kleckley, Albert L.</option>
+
+									<option value="4119">Knobel, Barry W.</option>
+
+									<option value="4135">Konduros, Aphrodite K.</option>
+
+									<option value="4022">Lake, Walter T.</option>
+
+									<option value="4057">Laney, Clyde K.</option>
+
+									<option value="4062">Lee, Jamie F.</option>
+
+									<option value="4029">Lesesne, L. L.</option>
+
+									<option value="4024">Lever, A. F.</option>
+
+									<option value="4025">Mallard, Robert R.</option>
+
+									<option value="4026">Maring, David H.</option>
+
+									<option value="4027">Mcchesney, P. S.</option>
+
+									<option value="4028">McClain, J. Franklin</option>
+
+									<option value="4023">Mceachin, Dan M.</option>
+
+									<option value="4050">Mcelveen, A. L.</option>
+
+									<option value="4082">McLeod, William J.</option>
+
+									<option value="4031">Mendenhall, Samuel B.</option>
+
+									<option value="4059">Mobley, Berry L.</option>
+
+									<option value="4090">Murdock, Jamie L.</option>
+
+									<option value="4068">Myers, Marion D.</option>
+
+									<option value="4032">Newell, J. A.</option>
+
+									<option value="4056">Patterson, Larry R.</option>
+
+									<option value="4033">Powell, K. M.</option>
+
+									<option value="4054">Purdy, Robert O.</option>
+
+									<option value="4034">Rector, Frank Ervin</option>
+
+									<option value="4049">Ricther, Lawrence E.</option>
+
+									<option value="4035">Rivers, L. Mendel</option>
+
+									<option value="4079">Rogers, Abigail R.</option>
+
+									<option value="4036">Rogers, W. Frank</option>
+
+									<option value="4037">Roper, James </option>
+
+									<option value="4100">Saunders, Wyatt T.</option>
+
+									<option value="4091">Sawyer, C. David</option>
+
+									<option value="4092">Segars-Andrews, Frances P.</option>
+
+									<option value="4038">Shaw, Curtis Graham</option>
+
+									<option value="4039">Smith, Willie T.</option>
+
+									<option value="4040">Sparks, James William</option>
+
+									<option value="4041">Spigner, J. Mcnary</option>
+
+									<option value="4085">Sutherland, Amy C.</option>
+
+									<option value="4114">Tunstall, Billy A.</option>
+
+									<option value="4086">Turbeville, R. Wright</option>
+
+									<option value="4042">Vaught, Winston W.</option>
+
+									<option value="4150">Verdin, Letitia H.</option>
+
+									<option value="4043">Want, Leroy M.</option>
+
+									<option value="4044">Warshauer, Bernard J.</option>
+
+									<option value="4045">Watson, Maxey G.</option>
+
+									<option value="4018">Westbrook, Marc H.</option>
+
+									<option value="4046">Wilburn, David N.</option>
+
+									<option value="4107">Williams, H. Bruce</option>
+
+									<option value="4074">Wilson, Joseph A.</option>
+
+									<option value="4136">Young, William Jeffrey</option>
+
+									<option value="4102">Anderson, Georgia V.</option>
+
+									<option value="4123">Armstrong, Robert S.</option>
+
+									<option value="4095">Fender, Jane D.</option>
+
+									<option value="4129">Guess, Robert E.</option>
+
+									<option value="4105">Kinon, Lisa A.</option>
+
+									<option value="4063">Nuessle, Peter R.</option>
+
+									<option value="4108">Riddle, Leslie K.</option>
+
+									<option value="4077">Spruill, James A.</option>
+
+									<option value="4096">Strom, Donna S.</option>
+
+									<option value="4125">Woods, Henry T.</option>
+
+								</select>
+								<br/><span class="help-text">hard-coded, too</span>
+							</div>
+						</div>
+					</div>
+
+					<div style="display:none" data-form-mash="http://www.judicial.state.sc.us/opinions/searchMasterJudge.cfm" data-radio-toggle="master">
+						<div class="control-group">
+							<label class="control-label">Master Equity Judge</label>
+							<div class="controls">
+								<select name="masterJudge">
+									<option value="0">Pick a Judge</option>
+									<option value="3066">Banks, Martin R.</option>
+			   
+									<option value="3067">Booth, Richard L.</option>
+								   
+									<option value="3078">Chellis, James E.</option>
+								   
+									<option value="3057">Clark, Curtis G.</option>
+								   
+									<option value="3060">Coffey, William C.</option>
+								   
+									<option value="3065">Cooper, Gordon G.</option>
+								   
+									<option value="3072">Crosby, Joe M.</option>
+								   
+									<option value="3070">Doby, Stephen Bryan</option>
+								   
+									<option value="3004">Drew, Ellis B.</option>
+								   
+									<option value="3069">Dukes, Marvin H.</option>
+								   
+									<option value="3076">Griffith, M. Anderson</option>
+								   
+									<option value="3073">Howe, Cynthia Graham</option>
+								   
+									<option value="3077">Jackson, James B.</option>
+								   
+									<option value="3063">Kimball, S. Jackson</option>
+								   
+									<option value="3003">Sanders, Walter H.</option>
+								   
+									<option value="3062">Scarborough, Mikell R.</option>
+								   
+									<option value="3023">Simmons, Charles B. </option>
+								   
+									<option value="3068">Spence, James O.</option>
+								   
+									<option value="3055">Strickland, Joseph M. </option>
+								   
+									<option value="3056">Tzerman, Jeffrey Marc</option>
+								   
+									<option value="3058">Watson, Robert E.</option>
+								   
+									<option value="3050">Black , Marie J. </option>
+								   
+									<option value="3026">Breeden, John L. </option>
+								   
+									<option value="3038">Burgdorf, Olin Davie </option>
+								   
+									<option value="3064">Coltrane, Curtis L.</option>
+								   
+									<option value="3010">Condon, Louis E. </option>
+								   
+									<option value="3053">Cothran, Ralph F.</option>
+								   
+									<option value="3051">Couch, Roger L.</option>
+								   
+									<option value="3047">Cross, James Stanton</option>
+								   
+									<option value="3048">Culbertson, Benjamin H.</option>
+								   
+									<option value="3009">Culclasure, Thomas P. </option>
+								   
+									<option value="3061">Curry, Charles E.</option>
+								   
+									<option value="3052">Davis, Clyde N. </option>
+								   
+									<option value="3042">DeZern, Thomas J. </option>
+								   
+									<option value="3043">Evans, Linwood S. </option>
+								   
+									<option value="3074">Goodstein, Diane S. </option>
+								   
+									<option value="3046">Grier, John Buford </option>
+								   
+									<option value="3001">Gulledge, Ruth F.</option>
+								   
+									<option value="3028">Jacobs, Rolly W. </option>
+								   
+									<option value="3032">Jefferson, George W. </option>
+								   
+									<option value="3031">Jennings, Robert D. </option>
+								   
+									<option value="3005">Kemmerlin, Thomas </option>
+								   
+									<option value="3075">Murphy, Maite D.</option>
+								   
+									<option value="3008">Pieper, Daniel F. </option>
+								   
+									<option value="3002">Smoak, Robert A.</option>
+								   
+									<option value="3033">Stokes, D. Mark</option>
+								   
+									<option value="3018">Watts, Patrick R. </option>
+								   
+									<option value="3054">Williams, John B.</option>
+								   
+									<option value="3049">Young, Roger M.</option>
+
+								</select>
+								<br/><span class="help-text">hard-coded, too</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label">&nbsp;</label>
+						<div class="controls">
+							<input type="submit"/>
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+			<div id="results" class="span6">
+				Results here....
+			</div>
+		</div>
+
+	</body>
+
+</html>
